@@ -8,7 +8,7 @@ CpuUsage=$(top -b -n1 | grep "Cpu(s)" | awk '{print 100 - $8 "%"}')
 memorytotal=$(free -m | grep Mem: | awk '{print $2}')
 memoryused=$(free -m | grep Mem: | awk '{print $3}')
 memorypercentage=$(($memoryused * 10000 / $memorytotal))
-memorypercentage=$(echo "${memorypercentage:0:-2}.${memorypercentage: -2>
+memorypercentage=$(echo "${memorypercentage:0:-2}.${memorypercentage: -2}")
 
 disktotal=$(df -h --total | grep total | awk '{ print $2 }')
 diskused=$(df -m --total | grep total |awk '{print $3}')
